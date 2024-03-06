@@ -1,6 +1,8 @@
 package io.zipcoder;
 
 
+import org.codehaus.plexus.util.StringUtils;
+
 /**
  * @author tariq
  */
@@ -15,7 +17,14 @@ public class StringsAndThings {
      *           countYZ("day fyyyz"); // Should return 2
      */
     public Integer countYZ(String input){
-        return null;
+        String [] splitStrings = input.split(" ");
+        Integer yz = 0;
+             for (String splitString : splitStrings) {
+                 if (splitString.charAt(splitString.length() - 1) == 'y' || splitString.charAt(splitString.length() - 1) == 'z') {
+                     yz++;
+                 }
+             }
+        return yz;
     }
 
     /**
@@ -28,7 +37,9 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove){
-        return null;
+        String replace = base.replace(remove, "");
+
+        return replace;
     }
 
     /**
@@ -40,7 +51,14 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
+        boolean isCountEqualNotCount = false;
+        int isCount = StringUtils.countMatches(input, "is");
+        int notCount = StringUtils.countMatches(input, "not");
+
+        if (isCount == notCount) {
+            isCountEqualNotCount = true;
+        }
+        return isCountEqualNotCount;
     }
 
     /**
@@ -51,6 +69,7 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
+        
         return null;
     }
 
