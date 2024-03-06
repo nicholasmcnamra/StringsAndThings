@@ -69,8 +69,14 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-        
-        return null;
+        // check character against its index - 1 and index + 1;
+        boolean happyString = false;
+
+        for (int i = 0; i < input.length(); i++){
+            if (input.charAt(i) == 'g' && input.charAt(i - 1) == 'g')
+                happyString = true;
+        }
+        return happyString;
     }
 
 
