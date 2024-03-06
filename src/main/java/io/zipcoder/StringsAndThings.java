@@ -88,6 +88,13 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        return null;
+        int count = 0;
+
+        for (int i = 1; i < input.length(); i++) {
+            if (input.charAt(i) == input.charAt(i - 1) && input.charAt(i) == input.charAt(i + 1)) {
+                count++;
+            }
+        }
+        return count;
     }
 }
